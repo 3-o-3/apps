@@ -1,0 +1,49 @@
+
+                                  XD
+                           Development Log
+
+2000 August 29
+
+Added _WIN32 code to xd.c to set input and output text/binary
+modes and force modes of standard input and output depending on
+the operation being performed.  Input is set to binary except
+when a "-l" option load is selected, in which case the input
+file is text mode and the output is binary.
+
+2000 September 10
+
+Remade logo using Snap ITC font as before, changing background
+colour to be white as used in the updated HTML file.  Note that
+due to an error in this font's bounding box calculation one
+must prefix "XD" with a space to avoid truncation of the left
+part of the "X".
+
+2000 September 10
+
+Version 1.3.
+
+2017 October 16
+
+Updated Makefile so that the test target works with current versions
+of Linux.  The options on "tail" have changed since Solaris days in
+2000, and we need to include <unistd.h> in the embedded test program
+to avoid natters from GCC.  Added -Wall to C compiler options.
+
+Eliminated Win32 binaries from the release.  They, like the operating
+system on which they ran and its regrettable vendor, are impotent and
+obsolete.
+
+Removed "lint" target from Makefile.  It's obsolete.
+
+Removed "zip" target.  We don't support legacy systems.
+
+Cleaned up "tar" target to use tar's built in gzip and renamed
+to "dist".
+
+Renamed the "test" target to the more standard "check".
+
+Modified the individual test targets to create their temporary
+files in the working directory instead of /tmp, and to clean
+up the temporary files at the end of each test.
+
+Version 1.4.
